@@ -1,0 +1,43 @@
+<div class="container mx-auto p-4">
+    <h2 class="text-2xl font-bold mb-4">Registrar Nuevo Espécimen</h2>
+    <form (ngSubmit)="onSubmit()" #especimenForm="ngForm" class="max-w-lg">
+      <div class="mb-4">
+        <label class="block text-gray-700">Nombre Científico:</label>
+        <input type="text" [(ngModel)]="especimen.nombreCientifico" 
+               name="nombreCientifico" required
+               class="w-full px-3 py-2 border rounded">
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700">Recolector:</label>
+        <input type="text" [(ngModel)]="especimen.recolector" 
+               name="recolector" required
+               class="w-full px-3 py-2 border rounded">
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700">Lugar de Recolecta:</label>
+        <input type="text" [(ngModel)]="especimen.lugarRecolecta" 
+               name="lugarRecolecta"
+               class="w-full px-3 py-2 border rounded">
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700">Fecha de Recolecta:</label>
+        <input type="date" [(ngModel)]="especimen.fechaRecolecta" 
+               name="fechaRecolecta"
+               class="w-full px-3 py-2 border rounded">
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700">Detalles Ecológicos:</label>
+        <textarea [(ngModel)]="especimen.detallesEcologicos" 
+                  name="detallesEcologicos"
+                  class="w-full px-3 py-2 border rounded"></textarea>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700">Foto:</label>
+        <input type="file" (change)="onFileSelected($event)" class="w-full px-3 py-2 border rounded">
+      </div>
+      <button type="submit" 
+              class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+        Guardar Espécimen
+      </button>
+    </form>
+  </div>

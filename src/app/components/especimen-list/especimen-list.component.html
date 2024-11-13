@@ -1,0 +1,38 @@
+<div class="container mx-auto p-4">
+    <h2 class="text-2xl font-bold mb-4">Lista de Especímenes</h2>
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white border border-gray-300">
+        <thead>
+          <tr class="bg-gray-100">
+          <th class="px-4 py-2">id</th>
+            <th class="px-4 py-2">Nombre Científico</th>
+            <th class="px-4 py-2">Recolector</th>
+            <th class="px-4 py-2">Lugar</th>
+            <th class="px-4 py-2">Fecha</th>
+            <th class="px-4 py-2">Detalles</th>
+            <th class="px-4 py-2">Fotografia</th>
+            <th class="px-4 py-2">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let especimen of especimenes" class="border-t">
+          <td class="px-4 py-2">{{especimen.id}}</td>
+            <td class="px-4 py-2">{{especimen.nombreCientifico}}</td>
+            <td class="px-4 py-2">{{especimen.recolector}}</td>
+            <td class="px-4 py-2">{{especimen.lugarRecolecta}}</td>
+            <td class="px-4 py-2">{{especimen.fechaRecolecta}}</td>
+            <td class="px-4 py-2">{{especimen.detallesEcologicos}}</td>
+            <td class="border px-4 py-2">
+                <img [src]="especimen.linkFoto" alt="Foto del Especimen" width="100">
+              </td>
+            <td class="px-4 py-2">
+              <button (click)="deleteEspecimen(especimen.id!)" 
+                      class="bg-red-500 text-white px-3 py-1 rounded">
+                Eliminar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
